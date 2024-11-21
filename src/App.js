@@ -18,17 +18,18 @@ function App() {
   }, []);
   
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL || '/'}>
-      {showLoading ? (
-        <Loader />
-      ) : (
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* Add fallback route to handle unmatched paths */}
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      )}
-    </BrowserRouter>
+    <BrowserRouter>
+  {showLoading ? (
+    <Loader />
+  ) : (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      {/* Add fallback route to handle unmatched paths */}
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
+  )}
+</BrowserRouter>
+
   );
 }
 
