@@ -1,9 +1,9 @@
 export const Experiences = [
   {
     _id: "001",
-    company: "AspireVision Tech Edu",
+    company: "Aspire vision Tech Education Pvt Ltd ",
     title: "Web Developer_Trainee",
-    period: "2022-23",
+    period: "May 2023 - Aug 2023",
     description: `
     // Collaborated with senior devs to deliver project features
     function contributeToProject() {
@@ -16,8 +16,8 @@ export const Experiences = [
   {
     _id: "002",
     company: "Techweek Infotech LLC",
-    title: "FullStack Developer_Intern",
-    period: "2023-24",
+    title: "Front-end Developer_Intern",
+    period: "January 2024 - June 2024",
     description: `
     // Developed front-end for SkyDreamGroup (React.js)
     function buildFrontend() {
@@ -36,7 +36,7 @@ export const Experiences = [
   {
     _id: "003",
     company: "Freelancing",
-    title: "FullStack Developer",
+    title: "Front-end Developer",
     period: "Present",
     description: `
     // Future projects and innovations coming soon...

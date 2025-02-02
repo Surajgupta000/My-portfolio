@@ -4,74 +4,123 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
     font-family: "Montserrat", sans-serif;
 }
+
+/* Custom Scrollbar Styling */
 ::-webkit-scrollbar {
     width: 6px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
 
+::-webkit-scrollbar-track {
     background-color: #013f3c7f;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #013f3c7f; 
-    border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  /* ::-webkit-scrollbar-thumb:hover {
-    background: #013f3c7f; 
-  } */
+}
 
-  i{
+::-webkit-scrollbar-thumb {
+    background: #013f3c7f;
+    border-radius: 10px;
+}
+
+/* Hide scrollbar for specific sections */
+.hide-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Edge */
+}
+
+/* Icon Hover Effect */
+i {
     cursor: pointer;
-  }
-  i:hover{
+}
+
+i:hover {
     color: aliceblue;
-  }
-  @layer components {
+}
+
+/* Keyframe Animation for Border Glow */
+@layer components {
     @keyframes border-glow {
-      0% {
-        border-top-color: #f8f9fa; /* start from top */
-        border-right-color: transparent;
-        border-bottom-color: transparent;
-        border-left-color: transparent;
-      }
-      25% {
-        border-right-color: #f8f9fa;
-      }
-      50% {
-        border-bottom-color: #f8f9fa;
-      }
-      75% {
-        border-left-color: #f8f9fa;
-      }
-      100% {
-        border-color: #f8f9fa;
-      }
+        0% {
+            border-top-color: #f8f9fa;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+        }
+        25% {
+            border-right-color: #f8f9fa;
+        }
+        50% {
+            border-bottom-color: #f8f9fa;
+        }
+        75% {
+            border-left-color: #f8f9fa;
+        }
+        100% {
+            border-color: #f8f9fa;
+        }
     }
-  
+
     .border-glow {
-      animation: border-glow 1s linear forwards;
+        animation: border-glow 1s linear forwards;
     }
-  }
-  
-  /* CSS to apply Fira Code font to descriptions */
+}
+
+/* Apply Fira Code font to descriptions */
 .fira-code-description {
-  font-family: 'Fira Code', monospace;
-  font-optical-sizing: auto;
-  font-weight: 400; /* Adjust weight as needed: 300, 400, 500, etc. */
-  font-style: normal;
-  color: #ffffff; /* Optional: keeps text white */
-  background-color: #1e1e1e; /* Dark background for code block styling */
-  padding: 1rem;
-  border-radius: 8px;
-  white-space: pre-wrap; /* Allows text wrapping while preserving indentation */
-  line-height: 1.5; /* Improves readability */
-  margin-top: 1rem;
+    font-family: 'Fira Code', monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #ffffff;
+    background-color: #1e1e1e;
+    padding: 1rem;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    margin-top: 1rem;
+}
+
+/* Gradient Mask Effect for Scrollable Sections */
+.mask-gradient {
+    position: relative;
+}
+
+.mask-gradient::before,
+.mask-gradient::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.mask-gradient::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.mask-gradient::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+/* Project Title Hover and Scroll Animation */
+.project-title {
+    transition: all 0.3s ease-in-out;
+}
+
+.project-title:hover {
+    transform: scale(1.05);
+    color: #00ffcc;
+}
+
+/* Make gradient move dynamically */
+.dynamic-gradient {
+    transition: transform 0.3s ease-in-out;
 }

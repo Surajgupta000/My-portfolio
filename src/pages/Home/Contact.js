@@ -1,7 +1,11 @@
 import React from "react";
 import Tsection from "../../components/Tsection";
 
+
+
 export default function Contact() {
+  
+
   const user = {
     name: "Suraj Kumar",
     age: null,
@@ -13,7 +17,7 @@ export default function Contact() {
   return (
     <div>
       <Tsection title="Say hello" />
-
+      
       <div className="flex sm:flex-col items-center justify-between">
         <div className="flex flex-col gap-1">
           <p className="text-tertiary text-sm">{"{"}</p>
@@ -26,8 +30,6 @@ export default function Contact() {
           <p className="text-tertiary text-sm">{"}"}</p>
         </div>
         <div className="h-[350px]">
-         
-
           <dotlottie-player
             src="https://lottie.host/e9be1e18-b3c0-4da3-a5c2-ecb7062b1b9d/2tvvZpAsC1.json"
             background="transparent"

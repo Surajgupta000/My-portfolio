@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home/Index';
 import { useState, useEffect } from 'react';
-import Loader from './components/Loader';
+import Loader from './components/Loader'; //  Ensure ThemeProvider is imported
 
 function App() {
   const [showLoading, setShowLoading] = useState(true);
@@ -18,18 +18,19 @@ function App() {
   }, []);
   
   return (
-    <BrowserRouter>
-  {showLoading ? (
-    <Loader />
-  ) : (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      {/* Add fallback route to handle unmatched paths */}
-      <Route path="*" element={<Navigate to="/" />} />
-    </Routes>
-  )}
-</BrowserRouter>
-
+    
+      <BrowserRouter>
+        {showLoading ? (
+          <Loader />
+        ) : (
+          <Routes>
+            <Route path="/" element={<Home />} />
+            {/* Add fallback route to handle unmatched paths */}
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        )}
+      </BrowserRouter>
+   
   );
 }
 
